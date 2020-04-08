@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "prohibit brewser back",
+    "version": "0.1.0",
+    "author": "Okita Kamegoro",
+    "browser_action": {
+        "default_icon": "./img/undo-blue.png"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "icons": {
+        "128": "./img/undo-blue.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+            "contents_script.js"
+        ]
+    }],
+    "permissions": ["activeTab"],
+    "description": "prohibit brewser back",
+    "short_name": "prohibit brewser back"
+}
